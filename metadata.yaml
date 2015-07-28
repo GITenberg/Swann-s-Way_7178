@@ -1,0 +1,33 @@
+_repo: Swann-s-Way_7178
+contributor:
+  translator:
+    agent_name: Scott-Moncrieff, C. K. (Charles Kenneth)
+    alias: Scott-Moncrieff, Charles Kenneth
+    birthdate: 1889
+    deathdate: 1930
+    gutenberg_agent_id: '217'
+    url: http://www.gutenberg.org/2009/agents/217
+creator:
+  author:
+    agent_name: Proust, Marcel
+    birthdate: 1871
+    deathdate: 1922
+    gutenberg_agent_id: '987'
+    url: http://www.gutenberg.org/2009/agents/987
+    wikipedia: http://en.wikipedia.org/wiki/Marcel_Proust
+description: Volume 1 of Remembrance of Things Past
+gutenberg_issued: '2004-12-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '7178'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- '!lcsh:Villages -- France -- Fiction'
+- '!lcc:PQ'
+- '!lcsh:France -- Social life and customs -- 19th century -- Fiction'
+- '!lcsh:Autobiographical fiction'
+title: Swann's Way
+url: http://www.gutenberg.org/ebooks/7178
