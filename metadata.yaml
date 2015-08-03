@@ -31,9 +31,9 @@ publisher: Project Gutenberg
 rights: Public domain in the USA.
 rights_url: http://creativecommons.org/about/pdm
 subjects:
-- '!lcsh:Villages -- France -- Fiction'
-- '!lcc:PQ'
-- '!lcsh:France -- Social life and customs -- 19th century -- Fiction'
-- '!lcsh:Autobiographical fiction'
+- '!lcsh: France -- Social life and customs -- 19th century -- Fiction'
+- '!lcc: PQ'
+- '!lcsh: Autobiographical fiction'
+- '!lcsh: Villages -- France -- Fiction'
 title: Swann's Way
 url: http://www.gutenberg.org/ebooks/7178
