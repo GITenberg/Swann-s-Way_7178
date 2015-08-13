@@ -1,0 +1,32 @@
+language: ruby
+before_install:
+- gem install asciidoctor tilt
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- asciidoctor -a toc,version=$VERSION -b xhtml5 -T ./asciidoctor-htmlbook/htmlbook-autogen/
+  -d book book.asciidoc -o book.html
+- git clone https://github.com/gitenberg-dev/HTMLBook
+- xsltproc -stringparam external.assets.list " " ./HTMLBook/htmlbook-xsl/epub.xsl book.html
+- cp ./HTMLBook/stylesheets/epub/epub.css OEBPS
+- cp cover.jpg OEBPS/cover.jpg
+- if test -d "./images"; then mv ./images ./OEBPS/ ;fi
+- zip -rX book.epub mimetype
+- zip -rX book.epub OEBPS/ META-INF/
+- if test -d "OEBPS/images/"; then zip -rX book.epub OEBPS/images/ ;fi 
+- mv book.epub Swanns-Way.epub
+branches:
+  only:
+  - master
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: Q0yd5j2HIn/VA7jiR5QdeHBMs1gldap2WnMg2DfuT+m+EoGa7SG/xAIO2GlH4xkdP+9/fK+R6GHjwpBI/kiZzAqC1B6C9ruyem9hMJYQgPIMf25Fg7ZAlBJZLE2WLDbBTvyv+qJ0PB1Scz4+TuCgYKaDpvqzeqjFHkjfFR2+XbNf5LMLDbVLKrmt7ZwSypwd2S6GKDq25p0DBXFrXrtMZHT7lz89OqrnkbrmOSfsJQvjVR7qp39s6nd+EYPVrKX+WYCckjsvAKNyeIu3tTwTlFHtp/1U69z401ZmX7RtwPa8Pf/ki8xLjkQIYwcpsAZnhiTho5fmnGl/E08mPAWFJ6B+xOlsAUlcnkqyoLbmJWVdJcCrbiplBQuZ/P5e+f3XkQegRhPgysdjH30/BxlKFVTfPtsmyKnEuQrLsWiOKbg9DruvcaSJPCTNSetJ0WmXcUmLa92IQm8lPHNGvM7swTXQnjSECw8thwxGfV+ps6BP7P8IKXYkka706qZSt2vtame+FZC0FzFtJ3lLUMQkMtOwRMZ7NdAPZshb2NRxJqM40sy3CuPJH+c9h2qDxt/Z31r2eYBJjYfN7HT2FNXeOEEChVaWpxSBGMBPamM2xFvQs+rPA1saRB+81NMKW7sDoXe5Y2hdr5mTAUmnivkofxE/Dc5IjQieuT/y/yhgVYg=
+  file: Swanns-Way.epub
+  "on":
+    repo: GITenberg/Swann-s-Way_7178
+addons:
+  apt:
+    packages:
+    - xsltproc
