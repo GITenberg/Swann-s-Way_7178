@@ -1,5 +1,5 @@
 _repo: Swann-s-Way_7178
-_version: 0.0.2
+_version: 0.1.0
 contributor:
   translator:
     agent_name: Scott-Moncrieff, C. K. (Charles Kenneth)
@@ -37,5 +37,6 @@ subjects:
 - '!lcc: PQ'
 - '!lcsh: Autobiographical fiction'
 - '!lcsh: Villages -- France -- Fiction'
+- GITenberg
 title: Swann's Way
 url: http://www.gutenberg.org/ebooks/7178
