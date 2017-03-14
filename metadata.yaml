@@ -1,5 +1,5 @@
 _repo: Swann-s-Way_7178
-_version: 0.2.1
+_version: 0.2.2
 contributor:
   translator:
     agent_name: Scott-Moncrieff, C. K. (Charles Kenneth)
@@ -23,6 +23,8 @@ creator:
     url: http://www.gutenberg.org/2009/agents/987
     wikipedia: http://en.wikipedia.org/wiki/Marcel_Proust
 description: Volume 1 of Remembrance of Things Past
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/7178#Swann-s-Way
 gutenberg_issued: '2004-12-01'
 gutenberg_type: Text
 identifiers:
